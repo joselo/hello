@@ -9,7 +9,7 @@ defmodule Hello.User do
     timestamps(type: :utc_datetime)
   end
 
-  def changeset(user, attrs) do
+  def changeset(user, attrs \\ %{}) do
     user
     |> cast(attrs, [:name, :email])
     |> validate_required([:name, :email])
